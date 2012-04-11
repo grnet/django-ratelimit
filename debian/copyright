@@ -1,0 +1,8 @@
+Format: http://dep.debian.net/deps/dep5
+Upstream-Name: django-ratelimit
+Upstream-Contact: James Socol <james@mozilla.com>
+Source: <https://github.com/jsocol/django-ratelimit>
+
+Files: *
+Copyright: 2011, Mozilla Foundation
+License: BSD

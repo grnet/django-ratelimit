@@ -1,0 +1,19 @@
+Source: django-ratelimit
+Section: python
+Priority: extra
+Maintainer: Kostas Papadimitriou <kpap@grnet.gr>
+Build-Depends: debhelper (>= 8.0.0), python, python-setuptools, python-django
+Standards-Version: 3.9.3
+Homepage: https://github.com/jsocol/django-ratelimit 
+Vcs-Browser: https://github.com/jsocol/django-ratelimit
+Vcs-Git: https://github.com/jsocol/django-ratelimit.git
+
+Package: python-django-ratelimit
+Architecture: all
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ ${python:Depends},
+Provides: ${python:Provides}
+Description: Django decorator to rate-limit views.
+ Django Ratelimit provides a decorator to rate-limit views. Limiting can be
+ based on IP address or a field in the request--either a GET or POST variable.
