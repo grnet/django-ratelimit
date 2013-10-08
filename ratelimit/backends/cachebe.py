@@ -20,7 +20,14 @@ class CacheBackend(BaseBackend):
                 val = getattr(request, request.method).get(f)
                 # Convert value to hexdigest as cache backend doesn't allow
                 # certain characters.
-                val = hashlib.sha1(val.encode('utf8')).hexdigest()
+
+                # sha1 requires string or buffer
+                if isinstance(val, basestring):
+                    val = val.encode('utf8')
+                if not val:
+                    val = u''
+
+                val = hashlib.sha1(val).hexdigest()
                 keys.append(u'field:%s:%s' % (f, val))
         return [CACHE_PREFIX + k for k in keys]
 
